@@ -49,17 +49,6 @@
     transform-origin: right center;
   }
 
-  #second {
-    width: 45%;
-    height: 6px;
-    background: lightcyan;
-    box-shadow: 0 0 3px 1px lightcyan;
-    position: absolute;
-    top: calc(50% - 3px);
-    border-radius: 3px;
-    left: 5%;
-    transform-origin: right center;
-  }
 
   #text {
     width: 100%;
@@ -81,13 +70,29 @@
     transform: translate(-50%, -50%);
   }
 
+  #round {
+    width: 45%;
+    height: 6px;
+    background: red;
+    box-shadow: 0 0 3px 1px lightcyan;
+    position: absolute;
+    top: calc(50% - 3px);
+    border-radius: 3px;
+    left: 5%;
+    transform-origin: right center;
+  }
+
   #test {
-    width: 300px;
-    height: 300px;
-    background-image: url(./image/500px-白色情人节·钟离·2022.png);
+    width: 200px;
+    height: 200px;
+    background-image: url(./image/改.png);
     background-repeat: no-repeat;
     background-size: cover;
-    transform-origin: bottom center;
+    position: absolute;
+    /* top: calc(50% - 3px); */
+    left: calc(50% - 200px);
+    transform: rotate(270deg);
+    transform-origin: left center;
   }
 </style>
 
@@ -96,7 +101,9 @@
     <div id="hour"></div>
     <div id="minute"></div>
     <div id="second"></div>
-    <div id="test"></div>
+    <div id="round">
+      <div id="test"></div>
+    </div>
     <p id="text"></p>
     <div id="orgin"></div>
   </div>
@@ -105,7 +112,7 @@
     const elMinute = document.getElementById('minute')
     const elSecond = document.getElementById('second')
     const elText = document.getElementById('text')
-    const eltest = document.getElementById('test')
+    const elround = document.getElementById('round')
     const clock = () => {
       const date = new Date()
       const hour = date.getHours()
@@ -114,8 +121,7 @@
       const text = date.getDate()
       elHour.style.transform = `rotate(${hour * 30 + 90}deg)`
       elMinute.style.transform = `rotate(${minute * 6 + 90}deg)`
-      elSecond.style.transform = `rotate(${second * 6 + 90}deg)`
-      eltest.style.transform = `rotate(${second * 6 + 90}deg)`
+      elround.style.transform = `rotate(${second * 6 + 90}deg)`
       elText.innerText = `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}:${second.toString().padStart(2, '0')}`
     }
     setInterval(clock, 1000)
