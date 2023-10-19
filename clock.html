@@ -6,7 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
   body {
     height: 100vh;
     margin: 0;
@@ -16,112 +19,90 @@
     background-attachment: fixed;
   }
 
-  #clock {
+  #h {
     width: 300px;
     height: 300px;
-    border: 5px solid rgb(161, 161, 240);
-    box-shadow: 0 0 3px 6px rgb(161, 161, 240);
+    /* background: lightcoral; */
     margin: auto;
     border-radius: 50%;
     position: relative;
-    top: calc(50% - 150px);
   }
 
-  #hour {
-    width: 20%;
-    height: 10px;
-    background: aqua;
-    position: absolute;
-    top: calc(50% - 5px);
-    left: 30%;
-    border-radius: 5px;
-    transform-origin: right center;
-  }
-
-  #minute {
-    width: 40%;
-    height: 10px;
-    background: lightcoral;
-    position: absolute;
-    top: calc(50% - 5px);
-    left: 10%;
-    border-radius: 5px;
-    transform-origin: right center;
-  }
-
-
-  #text {
-    width: 100%;
-    color: white;
-    font-size: 20px;
-    text-align: center;
-    top: 80%;
-    position: absolute;
-  }
-
-  #orgin {
-    width: 10px;
-    height: 10px;
+  #m {
+    width: 300px;
+    height: 300px;
+    /* background: lightpink; */
+    margin: auto;
     border-radius: 50%;
     position: absolute;
-    background: white;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: calc(50% - 150px);
+    left: calc(50% - 150px);
   }
 
-  #round {
-    width: 45%;
-    height: 6px;
-    background: red;
-    box-shadow: 0 0 3px 1px lightcyan;
+  #s {
+    width: 300px;
+    height: 300px;
+    /* background: black; */
+    border-radius: 50%;
     position: absolute;
-    top: calc(50% - 3px);
-    border-radius: 3px;
-    left: 5%;
-    transform-origin: right center;
+    top: calc(100% - 300px);
+    left: calc(50% - 150px);
   }
 
-  #test {
-    width: 200px;
-    height: 200px;
-    background-image: url(./image/伊布改.png);
-    background-repeat: no-repeat;
-    background-size: cover;
+  #h-t {
+    width: 100%;
+    font-size: 100px;
+    color: white;
+    font-family: Comfortaa;
     position: absolute;
-    left: calc(50% - 200px);
-    transform: rotate(270deg);
-    transform-origin: left center;
+    text-align: center;
+    text-shadow: 0 0 0.2em #F87, 0 0 1rem #F87;
   }
+
+  #m-t {
+    width: 100%;
+    font-size: 100px;
+    color: white;
+    font-family: Comfortaa;
+    position: absolute;
+    text-align: center;
+    text-shadow: 0 0 1rem rgb(110, 1, 153), 0 0 1rem rgb(110, 1, 153);
+  }
+
+  #s-t {
+    width: 100%;
+    font-size: 100px;
+    color: white;
+    font-family: Comfortaa;
+    position: absolute;
+    text-align: center;
+    text-shadow: 0 0 1rem rgb(0, 10, 150), 0 0 1rem rgb(0, 10, 150)
 </style>
 
 <body>
-  <div id="clock">
-    <div id="hour"></div>
-    <div id="minute"></div>
-    <div id="second"></div>
-    <div id="round">
-      <div id="test"></div>
-    </div>
-    <p id="text"></p>
-    <div id="orgin"></div>
+  <div id="h">
+    <p id="h-t"></p>
   </div>
+  <div id="m">
+    <p id="m-t"></p>
+  </div>
+  <div id="s">
+    <p id="s-t"></p>
+  </div>
+
   <script>
-    const elHour = document.getElementById('hour')
-    const elMinute = document.getElementById('minute')
-    const elSecond = document.getElementById('second')
-    const elText = document.getElementById('text')
-    const elround = document.getElementById('round')
+    const ht = document.getElementById('h-t')
+    const mt = document.getElementById('m-t')
+    const st = document.getElementById('s-t')
     const clock = () => {
       const date = new Date()
       const hour = date.getHours()
       const minute = date.getMinutes()
       const second = date.getSeconds()
       const text = date.getDate()
-      elHour.style.transform = `rotate(${hour * 30 + 90}deg)`
-      elMinute.style.transform = `rotate(${minute * 6 + 90}deg)`
-      elround.style.transform = `rotate(${second * 6 + 90}deg)`
-      elText.innerText = `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}:${second.toString().padStart(2, '0')}`
+      ht.innerText = `${hour.toString().padStart(2, '0')}`
+      mt.innerText = `${minute.toString().padStart(2, '0')}`
+      st.innerText = `${second.toString().padStart(2, '0')}`
     }
     setInterval(clock, 1000)
   </script>
