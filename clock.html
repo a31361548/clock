@@ -6,9 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
-
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@100;200;300;400;500;600;700;800;900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@100;200;300;400;500;600;700;800;900&family=Share+Tech+Mono&display=swap');
 
   body {
     height: 100vh;
@@ -22,16 +21,16 @@
   #h {
     width: 300px;
     height: 300px;
-    /* background: lightcoral; */
     margin: auto;
     border-radius: 50%;
-    position: relative;
+    position: absolute;
+    top: calc(50% - 150px);
+    left: calc(25% - 150px);
   }
 
   #m {
     width: 300px;
     height: 300px;
-    /* background: lightpink; */
     margin: auto;
     border-radius: 50%;
     position: absolute;
@@ -39,31 +38,35 @@
     left: calc(50% - 150px);
   }
 
-  #s {
+  #space {
     width: 300px;
     height: 300px;
-    /* background: black; */
+    /* border: 1px solid rgba(5, 204, 253, 0.712); */
+    /* box-shadow: 0 0 50px rgba(5, 204, 253, 0.712); */
+    background-size: cover;
+    margin: auto;
     border-radius: 50%;
     position: absolute;
-    top: calc(100% - 300px);
-    left: calc(50% - 150px);
+    top: calc(50% - 150px);
+    left: calc(75% - 150px);
   }
 
   #h-t {
     width: 100%;
     font-size: 100px;
     color: white;
-    font-family: Comfortaa;
+    font-family: 'Share Tech Mono', monospace;
     position: absolute;
     text-align: center;
     text-shadow: 0 0 0.2em #F87, 0 0 1rem #F87;
   }
 
+
   #m-t {
     width: 100%;
     font-size: 100px;
     color: white;
-    font-family: Comfortaa;
+    font-family: 'Share Tech Mono', monospace;
     position: absolute;
     text-align: center;
     text-shadow: 0 0 1rem rgb(110, 1, 153), 0 0 1rem rgb(110, 1, 153);
@@ -73,27 +76,77 @@
     width: 100%;
     font-size: 100px;
     color: white;
-    font-family: Comfortaa;
+    font-family: 'Share Tech Mono', monospace;
     position: absolute;
     text-align: center;
-    text-shadow: 0 0 1rem rgb(0, 10, 150), 0 0 1rem rgb(0, 10, 150)
+    text-shadow: 0 0 1rem rgb(15, 218, 157), 0 0 1rem rgb(82, 230, 185);
+  }
+
+
+  #rocket {
+    width: 150px;
+    height: 100px;
+    position: absolute;
+    transform-origin: right center;
+    top: calc(50% - 50px);
+  }
+
+  #spaceX {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    left: -90%;
+  }
+
+  #moon {
+    width: 200px;
+    height: 200px;
+    background-image: url(./image/月亮.png);
+    background-size: cover;
+    position: absolute;
+    top: 5%;
+  }
+
+  #am {
+    text-align: center;
+    margin: 0;
+    font-size: 80px;
+    color: white;
+    font-family: 'Share Tech Mono', monospace;
+    text-shadow: 0 0 1rem rgb(231, 15, 33), 0 0 1rem rgb(226, 70, 104);
+    position: absolute;
+    top: 10%;
+    left: 80%;
+  }
 </style>
 
 <body>
+  <!-- <input type="button" value=""
+    style="background-image: url(./image/地球.png);width:300px;height: 300px; background-repeat: no-repeat; background-size: cover; cursor: pointer; border-radius: 50%;float: left;"> -->
+
   <div id="h">
     <p id="h-t"></p>
   </div>
   <div id="m">
     <p id="m-t"></p>
   </div>
-  <div id="s">
+
+  <div id="space">
     <p id="s-t"></p>
+    <div id="rocket">
+      <img src="./image/太空人.png" id="spaceX">
+    </div>
   </div>
 
+  <div id="moon">
+    <p id="am">AM</p>
+  </div>
   <script>
     const ht = document.getElementById('h-t')
     const mt = document.getElementById('m-t')
     const st = document.getElementById('s-t')
+    const rocket = document.getElementById('rocket')
+    const am = document.getElementById('am')
     const clock = () => {
       const date = new Date()
       const hour = date.getHours()
@@ -103,6 +156,10 @@
       ht.innerText = `${hour.toString().padStart(2, '0')}`
       mt.innerText = `${minute.toString().padStart(2, '0')}`
       st.innerText = `${second.toString().padStart(2, '0')}`
+      rocket.style.transform = `rotate(${second * 6 + 90}deg)`
+      if (hour >= 12) {
+        am.innerText = 'PM'
+      }
     }
     setInterval(clock, 1000)
   </script>
