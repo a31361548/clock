@@ -295,47 +295,120 @@
       const date = new Date()
       const minute = date.getMinutes()
       const seconds = date.getSeconds()
-      if (minute % 1 === 0 && seconds === 0) {
-        $('.stars').show()
+      const millions = date.getMilliseconds
+      if (minute % 1 === 0 && seconds === 1) {
+        $('.stars').eq(0).fadeTo(10, 1)
         $('.stars').eq(0).animate({
-          left: '+=-1000px',
-          top: '+=1000px'
+          left: '+=-1300px',
+          top: '+=900px'
         }, 1000, 'linear')
+      } else if (seconds === 2) {
+        $('.stars').eq(0).fadeTo(10, 0)
+        $('.stars').eq(0).animate({
+          left: '+=1300px',
+          top: '+=-900px'
+        }, 1000, 'linear')
+      }
+      if (minute % 1 === 0 && seconds === 2) {
+        $('.stars').eq(1).fadeTo(10, 1)
         $('.stars').eq(1).animate({
           left: '+=-1000px',
           top: '+=1000px'
         }, 1000, 'linear')
+      } else if (seconds === 3) {
+        $('.stars').eq(1).fadeTo(10, 0)
+        $('.stars').eq(1).animate({
+          left: '+=1000px',
+          top: '+=-1000px'
+        }, 1000, 'linear')
+      }
+      if (minute % 1 === 0 && seconds === 3) {
+        $('.stars').eq(2).fadeTo(10, 1)
         $('.stars').eq(2).animate({
           left: '+=-1000px',
           top: '+=1000px'
-        }, 2000, 'linear')
+        }, 1000, 'linear')
+      } else if (seconds === 4) {
+        $('.stars').eq(2).fadeTo(10, 0)
+        $('.stars').eq(2).animate({
+          left: '+=1000px',
+          top: '+=-1000px'
+        }, 1000, 'linear')
+      }
+      if (minute % 1 === 0 && seconds === 4) {
+        $('.stars').eq(3).fadeTo(10, 1)
         $('.stars').eq(3).animate({
           left: '+=-1000px',
           top: '+=1000px'
-        }, 3000, 'linear')
+        }, 1000, 'linear')
+      } else if (seconds === 5) {
+        $('.stars').eq(3).fadeTo(10, 0)
+        $('.stars').eq(3).animate({
+          left: '+=1000px',
+          top: '+=-1000px'
+        }, 1000, 'linear')
+      }
+      if (minute % 1 === 0 && seconds === 5) {
+        $('.stars').eq(4).fadeTo(10, 1)
         $('.stars').eq(4).animate({
           left: '+=-1000px',
           top: '+=1000px'
-        }, 4000, 'linear')
+        }, 1000, 'linear')
+      } else if (seconds === 6) {
+        $('.stars').eq(4).fadeTo(10, 0)
+        $('.stars').eq(4).animate({
+          left: '+=1000px',
+          top: '+=-1000px'
+        }, 1000, 'linear')
+      }
+      if (minute % 1 === 0 && seconds === 6) {
+        $('.stars').eq(5).fadeTo(10, 1)
         $('.stars').eq(5).animate({
           left: '+=-1000px',
           top: '+=1000px'
-        }, 4000, 'linear')
+        }, 1000, 'linear')
+      } else if (seconds === 7) {
+        $('.stars').eq(5).fadeTo(10, 0)
+        $('.stars').eq(5).animate({
+          left: '+=1000px',
+          top: '+=-1000px'
+        }, 1000, 'linear')
+      }
+      if (minute % 1 === 0 && seconds === 7) {
+        $('.stars').eq(6).fadeTo(10, 1)
         $('.stars').eq(6).animate({
           left: '+=-1000px',
           top: '+=1000px'
-        }, 4000, 'linear')
+        }, 1000, 'linear')
+      } else if (seconds === 8) {
+        $('.stars').eq(6).fadeTo(10, 0)
+        $('.stars').eq(6).animate({
+          left: '+=1000px',
+          top: '+=-1000px'
+        }, 1000, 'linear')
+      }
+      if (minute % 1 === 0 && seconds === 8) {
+        $('.stars').eq(7).fadeTo(10, 1)
         $('.stars').eq(7).animate({
           left: '+=-1000px',
           top: '+=1000px'
-        }, 4000, 'linear')
+        }, 1000, 'linear')
+      } else if (seconds === 9) {
+        $('.stars').eq(7).fadeTo(10, 0)
+        $('.stars').eq(7).animate({
+          left: '+=1000px',
+          top: '+=-1000px'
+        }, 1000, 'linear')
+      }
+      if (minute % 1 === 0 && seconds === 9) {
+        $('.stars').eq(8).fadeTo(10, 1)
         $('.stars').eq(8).animate({
           left: '+=-1000px',
           top: '+=1000px'
-        }, 8000, 'linear')
-      } else if (seconds === 5) {
-        $('.stars').hidden()
-        $('.stars').animate({
+        }, 1000, 'linear')
+      } else if (seconds === 10) {
+        $('.stars').eq(8).fadeTo(10, 0)
+        $('.stars').eq(8).animate({
           left: '+=1000px',
           top: '+=-1000px'
         }, 1000, 'linear')
